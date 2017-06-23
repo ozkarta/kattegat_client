@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+
+		<div id="catlist">
+
+			<dl *ngFor="let view of viewArray">
+				<dt><img src="http://placehold.it/300x200" alt="Product image" width="93" height="62" /><strong>{{view.price}}</strong>
+					<a
+					 routerLink="/product/{{view._id}}">{{view.sale_name}}</a>
+				</dt>
+				<dd>
+					<p>{{view.sale_description}}</p>
+				</dd>
+			</dl>
+			
+		</div>
+
+
+	</div>
+</div>

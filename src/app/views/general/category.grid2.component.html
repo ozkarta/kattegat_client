@@ -1,0 +1,137 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+
+            <div id="main-category-view">
+                <div class="list-group panel">
+
+                    <div *ngFor="let category of categoryList">
+                        <a *ngIf="category.child_category.length>0" href="#{{category._id}}" class="list-group-item list-group-item-success" data-toggle="collapse"
+                            id="a-{{category._id}}">{{category.category_name}}</a>
+                        <a *ngIf="category.child_category.length==0" routerLink="/grid/{{category._id}}" class="list-group-item" id="a-{{category._id}}">{{category.category_name}}</a>
+
+                        <div *ngIf="category.child_category.length>0">
+                            <div class="collapse list-group-submenu" id="{{category._id}}">
+                                <div *ngFor="let sub1 of category.child_category">
+                                    <a *ngIf="sub1.child_category.length>0" href="#{{sub1._id}}" class="list-group-item list-group-item-success" data-toggle="collapse">{{sub1.category_name}}</a>
+                                    <a *ngIf="sub1.child_category.length==0" routerLink="/grid/{{category._id}}" class="list-group-item">{{sub1.category_name}}</a>
+
+                                    <div *ngIf="sub1.child_category.length>0">
+                                        <div class="collapse list-group-submenu" id="{{sub1._id}}">
+                                            <div *ngFor="let sub2 of sub1.child_category">
+                                                <a *ngIf="sub2.child_category.length>0" href="#{{sub2._id}}" class="list-group-item list-group-item-success" data-toggle="collapse">{{sub2.category_name}}</a>
+                                                <a *ngIf="sub2.child_category.length==0" routerLink="/grid/{{category._id}}" class="list-group-item">{{sub2.category_name}}</a>
+
+                                                <div *ngIf="sub2.child_category.length>0">
+                                                    <div class="collapse list-group-submenu" id="{{sub2._id}}">
+                                                        <div *ngFor="let sub3 of sub2.child_category">
+
+                                                            <a *ngIf="sub3.child_category.length>0" href="#{{sub3._id}}" class="list-group-item list-group-item-success" data-toggle="collapse">{{sub3.category_name}}</a>
+                                                            <a *ngIf="sub3.child_category.length==0" routerLink="/grid/{{category._id}}" class="list-group-item">{{sub3.category_name}}</a>
+
+                                                            <div *ngIf="sub3.child_category.length>0">
+                                                                <div class="collapse list-group-submenu" id="{{sub3._id}}">
+                                                                    <div *ngFor="let sub4 of sub3.child_category">
+
+                                                                        <a *ngIf="sub4.child_category.length>0" href="#{{sub4._id}}" class="list-group-item list-group-item-success" data-toggle="collapse">{{sub4.category_name}}</a>
+                                                                        <a *ngIf="sub4.child_category.length==0" routerLink="/grid/{{category._id}}" class="list-group-item">{{sub4.category_name}}</a>
+
+                                                                        <div *ngIf="sub4.child_category.length>0">
+                                                                            <div class="collapse list-group-submenu" id="{{sub4._id}}">
+                                                                                <div *ngFor="let sub5 of sub4.child_category">
+
+                                                                                    <a *ngIf="sub5.child_category.length>0" href="#{{sub5._id}}" class="list-group-item list-group-item-success" data-toggle="collapse">{{sub5.category_name}}</a>
+                                                                                    <a *ngIf="sub5.child_category.length==0" routerLink="/grid/{{category._id}}" class="list-group-item">{{sub5.category_name}}</a>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+
+            <div id="MainMenu">
+                <div class="list-group panel">
+
+                    <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Item 3</a>
+                    <div class="collapse" id="demo3">
+                        <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">Subitem 1 <i class="fa fa-caret-down"></i></a>
+                        <div class="collapse list-group-submenu" id="SubMenu1">
+                            <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
+                            <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a>
+                            <a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1">Subitem 3 c <i class="fa fa-caret-down"></i></a>
+                            <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
+                                <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 1</a>
+                                <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 2</a>
+                            </div>
+                            <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 4 d</a>
+                        </div>
+                        <a href="javascript:;" class="list-group-item">Subitem 2</a>
+                        <a href="javascript:;" class="list-group-item">Subitem 3</a>
+                    </div>
+                    <a href="#demo4" class="list-group-item list-group-item" data-toggle="collapse" data-parent="#MainMenu">Item 4</a>
+                    <div class="collapse" id="demo4">
+                        <a href="" class="list-group-item">Subitem 1</a>
+                        <a href="" class="list-group-item">Subitem 2</a>
+                        <a href="" class="list-group-item">Subitem 3</a>
+                    </div>
+                    <a href="#demo5" class="list-group-item list-group-item" data-toggle="collapse" data-parent="#MainMenu">Item 5</a>
+                    <div class="collapse" id="demo5">
+                        <a href="#" class="list-group-item">Subitem 1</a>
+                        <a href="" class="list-group-item">Subitem 2</a>
+                        <a href="" class="list-group-item">Subitem 3</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>-->
+
+
+
+<!--
+!!!Dynamic but client side rendered!!!-->
+
+<!--
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2" >
+
+            <div id="category-main-div">
+                <div class="list-group panel" id="category-list">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+-->
